@@ -1,8 +1,14 @@
 package DDakDae.intro.domain;
 
-public class Member {
+import jakarta.persistence.*;
 
+@Entity
+public class Member {
+    
+    // DB에서 id를 자동으로 생성해주는 전략
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     public Long getId() {
